@@ -1,19 +1,19 @@
 import { Fragment } from 'react';
 
 //Context
-import { ContextAPI } from './context/contextAPI';
+
 
 //Components: 
-import Home from './pages/Home.jsx'
+import Home from './pages/Home/Home.jsx'
 
 
 function App() {
   return (
-    <ContextAPI>
+
       <Fragment>
         <Home />
       </Fragment>
-    </ContextAPI>
+
   );
 }
 
