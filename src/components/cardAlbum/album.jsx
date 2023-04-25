@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 function CardAlbum({data}) {
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={data.images[0].url} />
+      <Card.Img variant="top" src="#" />
       <Card.Body>
         <Card.Title>{data.name}</Card.Title>
         <Card.Text>

@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 
 //Context
-import { Navbar } from 'react-bootstrap';
+import { ContextAPI } from './context/contextAPI';
 
 //Components: 
 import Home from './pages/Home.jsx'
@@ -9,11 +9,11 @@ import Home from './pages/Home.jsx'
 
 function App() {
   return (
-    <Navbar>
+    <ContextAPI>
       <Fragment>
         <Home />
       </Fragment>
-    </Navbar>
+    </ContextAPI>
   );
 }
 
