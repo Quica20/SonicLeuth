@@ -1,8 +1,8 @@
 import React, {Children, createContext, useState} from "react";
 
-const ItemsContext = createContext();
+export const ItemsContext = createContext();
 
-export const ItemsProvider = ({Children}) =>{
+export const ItemsProvider = ({children}) =>{
     const[itemsCheckout, setItemsCheckout] = useState([]);
     const[numberOfItems, setNumberOfItems] = useState(0);
 
@@ -29,9 +29,9 @@ export const ItemsProvider = ({Children}) =>{
 
     return(
     <ItemsContext.Provider
-    value = {addItemsCheckOut}
+    value ={ {addItemsCheckOut, itemsCheckout, numberOfItems, removeItem}}
     >
-        {Children}
+        {children}
     </ItemsContext.Provider>
     )
 }; 

@@ -10,11 +10,11 @@ import CheckOut from './pages/Shopping Cart Checkout/CheckOut.jsx';
 
 function App() {
   return (
-    <ItemsProvider>
+      <ItemsProvider>
         <Fragment>
           <Home />   
         </Fragment>
-    </ItemsProvider>
+        </ItemsProvider>
   );
 }
 
