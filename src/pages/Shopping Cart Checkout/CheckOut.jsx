@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import CheckOutCard from '../../components/Shopping Cart CheckOut/CheckOutCard'
+import NavBar from '../../components/NavBar/navBar'
+import Barra from '../../components/barra/barra'
+import PurchaseConfirmation from '../../components/purchase confirmation/purchaseConfirmation'
 
 function CheckOut() {
   return (
-    <div>CheckOut</div>
+    <Fragment>
+      <NavBar />
+      <Barra />
+      <CheckOutCard />
+      <CheckOutCard />
+      <CheckOutCard />
+      <CheckOutCard />
+      <PurchaseConfirmation />
+    </Fragment>
   )
 }
 

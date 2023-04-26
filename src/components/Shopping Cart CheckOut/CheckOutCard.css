@@ -1,0 +1,39 @@
+.row-container {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    border: 1px solid black; /* Agregar borde negro de 1px */
+    margin: 15px; /* Agregar margen de 10px */
+  }
+  
+  .row-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .row-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .row-price,
+  .row-date,
+  .row-songs {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .row-delete-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
