@@ -8,10 +8,10 @@ const NavBar = () => {
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand style={{ fontSize: '20px' }} href="#home">Navbar</Navbar.Brand>
+          <Navbar.Brand style={{ fontSize: '20px' }} href="#home">SONICLEUTH</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="#features">Shopping Cart</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

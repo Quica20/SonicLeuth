@@ -1,5 +1,10 @@
 import React, {useState, useEffect, Fragment} from 'react'
 import ItemList from '../itemList/ItemList';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 //Keys Api Spotify:
 const CLIENT_ID = "7466febb4a334418b788a14e25a6a973";
@@ -62,10 +67,37 @@ const IntemListContainer = () => {
     console.log(albums)
     return (
     <Fragment>
-    <input type="text" value={searchInput} onChange={handleInputChange} />
+    <Navbar bg="light" expand="lg">
+      <Container>
+
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="ms-auto my-2 my-lg-0"
+            style={{ maxHeight: '100px' }}
+            navbarScroll
+          >
+            <Form className="d-flex">
+              <Form.Control
+                type="search"
+                placeholder="Search"
+                className="me-2"
+                aria-label="Place an Artist"
+                value={searchInput} 
+                onChange={handleInputChange}
+              />
+              <Button variant="outline-success"
+              onClick={search}
+              >Search</Button>
+            </Form>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+{/*     <input type="text" value={searchInput} onChange={handleInputChange} />
     <button
     onClick={search}
-    >proba</button>
+    >proba</button> */}
 
     <ItemList data = {albums}/>
     
