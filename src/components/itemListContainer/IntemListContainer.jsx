@@ -80,7 +80,7 @@ const IntemListContainer = () => {
             <Form className="d-flex">
               <Form.Control
                 type="search"
-                placeholder="Search"
+                placeholder="Place an Artist"
                 className="me-2"
                 aria-label="Place an Artist"
                 value={searchInput} 

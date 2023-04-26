@@ -6,8 +6,9 @@ export const ItemsProvider = ({children}) =>{
     const[itemsCheckout, setItemsCheckout] = useState([]);
     const[numberOfItems, setNumberOfItems] = useState(0);
 
+
+    
     function addItemsCheckOut(id, name, imgs, release_date, total_tracks){
-        const itemsOld = itemsCheckout;
         const addNewitem = {
             identificador: id,
             nombre: name,
@@ -15,7 +16,7 @@ export const ItemsProvider = ({children}) =>{
             fechaLanzamiento: release_date,
             totalCanciones: total_tracks
         }
-        setItemsCheckout([itemsOld, addNewitem])                                                                                
+        setItemsCheckout([...itemsCheckout, addNewitem])                                                                                
     };
 
     function removeItem(id){

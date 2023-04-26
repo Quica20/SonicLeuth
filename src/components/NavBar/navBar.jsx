@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
@@ -10,8 +11,8 @@ const NavBar = () => {
         <Container>
           <Navbar.Brand style={{ fontSize: '20px' }} href="#home">SONICLEUTH</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Shopping Cart</Nav.Link>
+            <Nav.Link as={Link} to="/">Home </Nav.Link>
+            <Nav.Link as={Link} to="/ShoppingCart">Shopping Cart </Nav.Link>
           </Nav>
         </Container>
       </Navbar>

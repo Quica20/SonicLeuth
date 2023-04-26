@@ -10,7 +10,7 @@ function ItemList({data}) {
         {data.map((item) => {
           return(
             <div className="col-sm-3">
-              <CardAlbum key={item.id} id={item.id} name={item.name} 
+              <CardAlbum  id={item.id} name={item.name} 
               imgs={item.images[0].url} releaseDate={item.release_date} 
               totalTracks={item.total_tracks}
               />

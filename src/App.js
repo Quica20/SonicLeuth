@@ -1,19 +1,26 @@
-import { Fragment } from 'react';
-
+import React, { Fragment } from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //Context
 import { ItemsProvider } from './context/itemsContext.js';
 
 //Components: 
 import Home from './pages/Home/Home.jsx'
 import CheckOut from './pages/Shopping Cart Checkout/CheckOut.jsx';
- 
+
+import NavBar from './components/NavBar/navBar'
 
 function App() {
   return (
       <ItemsProvider>
-        <Fragment>
-          <Home />   
-        </Fragment>
+          <Router>
+            <React.StrictMode>
+                <NavBar />
+                <Routes>
+                  <Route path='/' element={<Home />}/>
+                  <Route path='/ShoppingCart' element={<CheckOut />}/>
+                </Routes>
+            </React.StrictMode>
+          </Router>
         </ItemsProvider>
   );
 }

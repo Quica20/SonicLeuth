@@ -1,7 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useContext } from 'react';
-
 //Importamos contexto:
 import { ItemsContext } from '../../context/itemsContext';
 
@@ -26,7 +25,7 @@ function CardAlbum(props) {
         </Card.Text>
         <Button
         onClick={
-          clickAddItem()
+          clickAddItem
         }
         variant="primary"
         >Add to Cart</Button>
