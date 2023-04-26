@@ -17,9 +17,9 @@ function CheckOut() {
         return(
                 <div className='col-sm-3'>
                   <CheckOutCard 
-                  identificador={item.id} nombre={item.name} 
-                  imagen={item.images[0].url} fechaLanzamiento={item.release_date} 
-                  totalCanciones={item.total_tracks}
+                   identificador={item.identificador} nombre={item.nombre} 
+                   imagen={item.imagen} fechaLanzamiento={item.fechaLanzamiento} 
+                   totalCanciones={item.totalCanciones}
                   />
                 </div>
         )

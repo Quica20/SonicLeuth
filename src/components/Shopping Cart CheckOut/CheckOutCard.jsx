@@ -1,16 +1,31 @@
 import React, { Fragment } from 'react'
 import './CheckOutCard.css'
 
-function CheckOutCard() {
+import { useContext } from 'react'
+
+//Importamos contexto:
+import { ItemsContext } from '../../context/itemsContext'
+
+function CheckOutCard(props) {
+  const {addItemsCheckOut, itemsCheckout, numberOfItems, removeItem} = useContext(ItemsContext)
+
+  function deleteItem(elimi){
+    removeItem(props.identificador)
+  }
+
   return (
     <Fragment>
     <div className="row-container">
-      <img src="./87411c90985391.5e260730577dc.png" className="row-image" alt="Imagen de la fila" />
-      <h2 className="row-title">Circles</h2>
-      <p className="row-price">$200</p>
-      <p className="row-date">Creation Date: 25/09/2001</p>
-      <p className="row-songs">Tracks: 10</p>
-      <button className="row-delete-btn">🗑️</button>
+      <img src= {props.imagen} className="row-image" alt="Imagen de la fila" />
+      <h2 className="row-title">{props.nombre}</h2>
+      <p className="row-price">$100</p>
+      <p className="row-date">Creation Date: {props.fechaLanzamiento}</p>
+      <p className="row-songs">Tracks: {props.totalCanciones}</p>
+      <button className="row-delete-btn"
+      onClick={
+        deleteItem
+      }
+      >🗑️</button>
     </div>
     </Fragment>
   );
