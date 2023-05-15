@@ -3,6 +3,7 @@ import React, { createContext, useState} from "react";
 export const ItemsContext = createContext();
 
 export const ItemsProvider = ({children}) =>{
+    const [cardInVisible, setCardInVisible] = useState(true)
     const[itemsCheckout, setItemsCheckout] = useState([]);
     const[numberOfItems, setNumberOfItems] = useState(0);
     const [valueStart, setValueStart] = useState('')
@@ -36,9 +37,13 @@ export const ItemsProvider = ({children}) =>{
         setOnHome(true)
     }
 
+    function itemInVisible(){
+        setCardInVisible(false)
+    }
+
     return(
     <ItemsContext.Provider
-    value ={ {addItemsCheckOut, itemsCheckout, numberOfItems, removeItem, deleteAll,handleVisible,onStart,onHome,valueStart}}
+    value ={ {addItemsCheckOut, itemsCheckout, numberOfItems, removeItem, deleteAll,handleVisible,onStart,onHome,valueStart,cardInVisible, itemInVisible}}
     >
         {children}
     </ItemsContext.Provider>

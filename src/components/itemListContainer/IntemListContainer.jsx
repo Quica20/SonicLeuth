@@ -81,6 +81,7 @@ const IntemListContainer = () => {
                 <h1>SONICLEUTH</h1>
                 <h2>all albums in one place</h2>
                 <h3>¡We do sends to all the country!</h3>
+                <p>We also have a section where it can be the 5 best-selling albums in history</p>
                 <Form.Control
                     type="search"
                     placeholder="Put the name of an artist"

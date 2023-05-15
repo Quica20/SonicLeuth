@@ -2,25 +2,45 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Navbar from 'react-bootstrap/Navbar';
-
-import { useContext } from 'react'
+import Alert from 'react-bootstrap/Alert';
+import { useContext,useState, useEffect, Fragment} from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 //Importamos contexto:
-import { ItemsContext } from '../../context/itemsContext'
+import { ItemsContext } from '../../context/itemsContext';
 
 
 function NavScrollExample() {
+  const [confirmAlert, setConfirmAlert] = useState(false)
+  const {itemInVisible} = useContext(ItemsContext)
 
-    const {deleteAll} = useContext(ItemsContext)
+  useEffect(() => {
+    if (confirmAlert) {
+      const timer = setTimeout(() => {
+        setConfirmAlert(false);
+      }, 2500);
+
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [confirmAlert]);
 
     function eje(){
-      toast('Purchase confirmed', { autoClose: 3000 });
-      deleteAll()
+      setConfirmAlert(true)
+      itemInVisible()
+      /*       toast('Purchase confirmed', { autoClose: 3000 });
+       */
     }
 
   return (
+      <Fragment>
 
-    <ToastContainer>
+      {confirmAlert && (
+              <Alert variant="success">
+                ¡Your album has been added successfully, you can see all your products in "Shopping Cart"!
+              </Alert>
+            )}
+
     <Navbar bg="ligth" expand="lg" variant="ligth">
       <Container fluid>
         <Navbar.Brand href="#">PURCHASE CONFIRMATION | Personal Information</Navbar.Brand>
@@ -63,7 +83,7 @@ function NavScrollExample() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    </ToastContainer>
+    </Fragment>
   );
 }
 

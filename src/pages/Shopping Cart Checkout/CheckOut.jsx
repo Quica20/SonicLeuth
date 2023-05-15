@@ -8,12 +8,14 @@ import { useContext } from 'react'
 import { ItemsContext } from '../../context/itemsContext'
 
 function CheckOut() {
-  const {itemsCheckout} = useContext(ItemsContext)
+  const {itemsCheckout, cardInVisible} = useContext(ItemsContext)
+
 
   return (
     <Fragment>
       <NavScrollExample />
       <Barra />
+      {cardInVisible ?
       <div  style={{ display: 'flex', flexWrap: 'wrap' }}>
       {itemsCheckout.map((item) => {
         return(
@@ -27,6 +29,8 @@ function CheckOut() {
         )
       })}
   </div>
+    :undefined
+    }
 
     </Fragment>
   )
