@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //Context
 import { ItemsProvider } from './context/itemsContext.js';
@@ -8,12 +8,21 @@ import Home from './pages/Home/Home.jsx'
 import CheckOut from './pages/Shopping Cart Checkout/CheckOut.jsx';
 import TopTen from './pages/topTen/topTen.jsx';
 import NavBar from './components/NavBar/navBar'
+import StartPage from './pages/startPage/StartPage';
+import { useContext } from 'react'
+
+//Importamos contexto
+import { ItemsContext } from './context/itemsContext';
+
 
 function App() {
-
+  const {onStart, onHome} = useContext(ItemsContext)
   return (
+    <Fragment>
+      {onStart ? <StartPage />: undefined}
+      {onHome ? 
       <ItemsProvider>
-  <Router>
+          <Router>
             <React.StrictMode>
                 <NavBar />
                 <Routes>
@@ -24,6 +33,9 @@ function App() {
             </React.StrictMode>
           </Router> 
         </ItemsProvider>
+      : undefined
+      }
+    </Fragment>
   );
 }
 

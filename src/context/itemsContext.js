@@ -5,6 +5,8 @@ export const ItemsContext = createContext();
 export const ItemsProvider = ({children}) =>{
     const[itemsCheckout, setItemsCheckout] = useState([]);
     const[numberOfItems, setNumberOfItems] = useState(0);
+    const [onStart, setOnStart] = useState(true) //inicio
+    const [onHome, setOnHome] = useState(false) //home
     
     function removeItem(id){
         const revItem = itemsCheckout.filter((item)=> item.identificador !== id);
@@ -28,9 +30,14 @@ export const ItemsProvider = ({children}) =>{
         itemsCheckout.splice(0, itemsCheckout.length);
     };
 
+    function handleVisible(){
+        setOnStart(false);
+        setOnHome(true)
+    }
+
     return(
     <ItemsContext.Provider
-    value ={ {addItemsCheckOut, itemsCheckout, numberOfItems, removeItem, deleteAll}}
+    value ={ {addItemsCheckOut, itemsCheckout, numberOfItems, removeItem, deleteAll,handleVisible,onStart,onHome}}
     >
         {children}
     </ItemsContext.Provider>

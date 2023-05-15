@@ -1,0 +1,29 @@
+.full-screen-div{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .containerChild {
+    text-align: center;
+    color: white;
+    border: 2px solid white;
+    padding: 20px 100px;
+  }
+
+  .containerChild h1{
+    font-size: 60px;
+  }
+  .containerChild h3{
+    font-size: 20px;
+  }
+
+  .custom-button{
+    margin-top: 10px;
+  }
