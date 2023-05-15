@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Navbar from 'react-bootstrap/Navbar';
 
 import { useContext } from 'react'
-
+import { ToastContainer, toast } from 'react-toastify';
 //Importamos contexto:
 import { ItemsContext } from '../../context/itemsContext'
 
@@ -14,10 +14,13 @@ function NavScrollExample() {
     const {deleteAll} = useContext(ItemsContext)
 
     function eje(){
-        deleteAll()
+      toast('Purchase confirmed', { autoClose: 3000 });
+      deleteAll()
     }
 
   return (
+
+    <ToastContainer>
     <Navbar bg="ligth" expand="lg" variant="ligth">
       <Container fluid>
         <Navbar.Brand href="#">PURCHASE CONFIRMATION | Personal Information</Navbar.Brand>
@@ -60,6 +63,7 @@ function NavScrollExample() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </ToastContainer>
   );
 }
 

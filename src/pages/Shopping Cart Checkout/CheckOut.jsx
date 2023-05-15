@@ -8,7 +8,7 @@ import { useContext } from 'react'
 import { ItemsContext } from '../../context/itemsContext'
 
 function CheckOut() {
-  const {addItemsCheckOut, itemsCheckout, numberOfItems, removeItem} = useContext(ItemsContext)
+  const {itemsCheckout} = useContext(ItemsContext)
 
   return (
     <Fragment>

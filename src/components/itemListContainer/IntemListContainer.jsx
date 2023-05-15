@@ -1,10 +1,12 @@
-import React, {useState, useEffect, Fragment} from 'react'
+import React, {useState, useEffect, Fragment,useContext} from 'react'
 import ItemList from '../itemList/ItemList';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { ItemsContext } from '../../context/itemsContext';
+import './styleItem.css'
 
 //Keys Api Spotify:
 const CLIENT_ID = "7466febb4a334418b788a14e25a6a973";
@@ -12,12 +14,12 @@ const CLIENT_SECRET = "d4e1d23bc7304925a6513bdf85fc9d1e";
 
 //Import Component:
 
-
 const IntemListContainer = () => {
-
+    const {onStart, onHome, handleVisible} = useContext(ItemsContext)
     const[searchInput, setSearchInput] = useState("");
     const[accessToken, setAccessToken] = useState("");
     const[albums, setAlbums] = useState([]);
+
 
     useEffect(()=> {
 
@@ -64,9 +66,44 @@ const IntemListContainer = () => {
             setSearchInput(event.target.value);
         }
 
+        function ejecutionHV(){
+          handleVisible()
+          search()
+      }
+    
+
     console.log(albums)
     return (
     <Fragment>
+    {onStart ? 
+            <div class="full-screen-div">
+            <div className="containerChild">
+                <h1>SONICLEUTH</h1>
+                <h2>all albums in one place</h2>
+                <h3>¡We do sends to all the country!</h3>
+                <Form.Control
+                    type="search"
+                    placeholder="Put the name of an artist"
+                    className="custom-input"
+                    value={searchInput} 
+                    onChange={
+                      handleInputChange
+                    
+                    }
+                />
+                <Button 
+                type="submit" 
+                className="custom-button"
+                onClick={
+                  ejecutionHV
+              }
+                >Search</Button>
+            </div>
+        </div>
+    
+    
+    : undefined}
+    {onHome ? 
     <Navbar bg="light" expand="lg">
       <Container>
 
@@ -84,23 +121,30 @@ const IntemListContainer = () => {
                 className="me-2"
                 aria-label="Place an Artist"
                 value={searchInput} 
-                onChange={handleInputChange}
+                onChange={
+                  handleInputChange
+                
+                }
               />
-              <Button variant="outline-success"
+
+
+            <Button variant="outline-success"
               onClick={search}
               >Search</Button>
+
+
             </Form>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-{/*     <input type="text" value={searchInput} onChange={handleInputChange} />
-    <button
-    onClick={search}
-    >proba</button> */}
-
+    :undefined
+    }
+    {onHome ? 
     <ItemList data = {albums}/>
-    
+    :undefined
+    }
+
     </Fragment>
     )
 }

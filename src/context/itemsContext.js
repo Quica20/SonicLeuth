@@ -5,6 +5,7 @@ export const ItemsContext = createContext();
 export const ItemsProvider = ({children}) =>{
     const[itemsCheckout, setItemsCheckout] = useState([]);
     const[numberOfItems, setNumberOfItems] = useState(0);
+    const [valueStart, setValueStart] = useState('')
     const [onStart, setOnStart] = useState(true) //inicio
     const [onHome, setOnHome] = useState(false) //home
     
@@ -37,7 +38,7 @@ export const ItemsProvider = ({children}) =>{
 
     return(
     <ItemsContext.Provider
-    value ={ {addItemsCheckOut, itemsCheckout, numberOfItems, removeItem, deleteAll,handleVisible,onStart,onHome}}
+    value ={ {addItemsCheckOut, itemsCheckout, numberOfItems, removeItem, deleteAll,handleVisible,onStart,onHome,valueStart}}
     >
         {children}
     </ItemsContext.Provider>

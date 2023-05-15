@@ -8,6 +8,9 @@ import { ItemsContext } from '../../context/itemsContext'
 
 function StartPage() {
     const {handleVisible} = useContext(ItemsContext)
+    function ejecutionHV(){
+        handleVisible()
+    }
     return (
     <Fragment>
         <div class="full-screen-div">
@@ -24,7 +27,7 @@ function StartPage() {
                 type="submit" 
                 className="custom-button"
                 onClick={
-                    handleVisible()
+                    ejecutionHV
                 }
                 >Search</Button>
             </div>

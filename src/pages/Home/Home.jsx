@@ -1,5 +1,4 @@
 import { Fragment} from 'react';
-
 import './Home.css'
 
 //Import Components:
@@ -8,7 +7,6 @@ import IntemListContainer from '../../components/itemListContainer/IntemListCont
 
 
 function Home() {
-
   return (
     <Fragment>
       <IntemListContainer />
